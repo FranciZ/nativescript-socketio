@@ -1,0 +1,90 @@
+{
+  "name": "nativescript-socketio",
+  "version": "2.4.0",
+  "description": "Socket.IO for nativescript",
+  "main": "index",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "android": "3.3.0",
+      "ios": "3.2.0"
+    }
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "ngc": "ngc --project tsconfig.aot.json",
+    "build": "tsc -p . && npm run ngc",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "lint-fix": "npm run lint --fix",
+    "demo.ios": "npm run preparedemo && cd ../demo && tns run ios",
+    "demo.android": "npm run preparedemo && cd ../demo && tns run android",
+    "demo-ng.ios": "npm run preparedemo-ng && cd ../demo-ng && tns run ios --emulator",
+    "demo-ng.ios.device": "npm run preparedemo-ng && cd ../demo-ng && tns platform remove ios && tns run ios",
+    "demo-ng.android": "npm run preparedemo-ng && cd ../demo-ng && tns platform remove android && tns run android --justlaunch",
+    "preparedemo": "npm run build && cd ../demo && tns plugin remove nativescript-socketio && tns plugin add ../src && tns install",
+    "preparedemo-ng": "npm run build && cd ../demo-ng && tns plugin remove nativescript-socketio && tns plugin add ../src && tns install",
+    "setup": "cd demo && npm install && cd ../src && cd ../demo && tns plugin add ../src && cd ../src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/triniwiz/nativescript-socketio.git"
+  },
+  "keywords": [
+    "nativescript",
+    "ecosystem:nativescript",
+    "nativescript-android",
+    "nativescript-ios",
+    "NativeScript",
+    "JavaScript",
+    "Android",
+    "IOS",
+    "socket.io",
+    "socketio",
+    "io",
+    "socket",
+    "events",
+    "tcp",
+    "websocket",
+    "framework",
+    "realtime"
+  ],
+  "author": {
+    "name": "Osei Fortune",
+    "email": "fortune.osei@yahoo.com",
+    "url": "https://github.com/triniwiz"
+  },
+  "contributors": [
+    {
+      "name": "Don Burgess",
+      "url": "https://github.com/db3dev",
+      "email": "don@db3dev.com"
+    },
+    {
+      "name": "Robert Laverty",
+      "url": "https://github.com/roblav96",
+      "email": "roblav96@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/triniwiz/nativescript-socketio/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/triniwiz/nativescript-socketio",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "@angular/common": "~4.4.6",
+    "@angular/compiler": "~4.4.6",
+    "@angular/compiler-cli": "~4.4.6",
+    "@angular/core": "~4.4.6",
+    "@angular/forms": "~4.4.6",
+    "@angular/http": "~4.4.6",
+    "@angular/platform-browser": "~4.4.6",
+    "@angular/router": "~4.4.6",
+    "zone.js": "~0.8.12",
+    "rxjs": "~5.0.1",
+    "tns-core-modules": "^3.3.0",
+    "tns-platform-declarations": "^3.3.0",
+    "tslint": "~5.6.0",
+    "typescript": "^2.4.2"
+  }
+}

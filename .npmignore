@@ -1,0 +1,6 @@
+screenshots
+.gitignore
+*.ts
+!*.d.ts
+*.png
+*.log
